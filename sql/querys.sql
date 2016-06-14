@@ -38,7 +38,7 @@ INSERT INTO `alesandb`.`sucursales` (`idsucursal`, `calle`, `numExt`, `telefono`
 #Store Procedures de la base de datos
 CALL `alesandb`.`SP_CrearUsuario`('Alejandro', 'Sanchez', 'Martinez', 'alejandro@alesan.mx', 'alesan', 'Sistemas',1);
 
-CALL `alesandb`.`SP_LogInUsuario`('alejandro@alesan.mx', 'ALESAN');
+CALL `alesandb`.`SP_LogInUsuario`('rosendo@alesan.mx', 'ALESAN');
 
 CALL `alesandb`.`SP_CrearClienteProvedor`('PROVEDOR', 'ASDFGHJKLOIU', 'ANARTEC CO.', 'ALDAMA', '2020','8677845129', 'PROVEDOR1@GMAIL.COM','ALEJANDRO', 'RAMIREZ', 'ELIZONDO', 1);
 
@@ -46,5 +46,6 @@ CALL `alesandb`.`SP_CrearCuenta`('QWERTYUIOPAS');
 
 CALL `alesandb`.`SP_Transaccion`('QWERTYUIOPAS', 'Folio1', 1, 1, null, 400.00, 'ABONO');
 CALL `alesandb`.`SP_Transaccion`('POIUYTREWEQ', 'Folio5', 1, 1, null, 200.00, 'CARGO');
+
 
 

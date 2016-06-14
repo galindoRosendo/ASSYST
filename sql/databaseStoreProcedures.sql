@@ -105,12 +105,12 @@ CREATE PROCEDURE `SP_LogInUsuario`(IN SPcorreoE varchar(35),IN SPcontrasenia var
 BEGIN
 
 IF((select count(*) from empleados where correoElectronico=SPcorreoE)=0) THEN
-	select 'INEXISTENTE' as 'RESULTADO', SPcorreoE as USUARIO;
+	select 'USUARIO INEXISTENTE' as 'Mensaje',0 AS idempleado,'Error' AS nombre_s, 'Error' AS apPaterno,'Eror' AS apMaterno, SPcorreoE AS correoElectronico,'Error' AS contrasenia,'Error' AS departamento, 'E' AS estadoEmpleado,0 AS idsucursal;
 ELSEIF((select count(*) from empleados where correoElectronico=SPcorreoE)=1) THEN
 	IF((select count(*) from empleados where correoElectronico=SPcorreoE AND contrasenia=SPcontrasenia)=1) THEN
-		select 'EXISTENTE' as 'RESULTADO',  concat(nombre_s,' ',apPaterno,' ',apMaterno) as 'Nombre Completo',correoElectronico as Usuario from empleados where correoElectronico=SPcorreoE AND contrasenia = SPcontrasenia;
+		select 'EXITO' as 'Mensaje',  idempleado,nombre_s,apPaterno,apMaterno,correoElectronico,contrasenia,departamento,estadoEmpleado,idsucursal from empleados where correoElectronico=SPcorreoE AND contrasenia = SPcontrasenia limit 1;
     ELSE 
-		select 'EXISTENTE' as 'RESULTADO',SPcorreoE as USUARIO,'CONTRASEÑA ERRONEA' AS MENSAJE;
+		select 'CONTRASEÑA ERRONEA' as 'Mensaje',  idempleado,nombre_s,apPaterno,apMaterno,correoElectronico,'' AS contrasenia,departamento,estadoEmpleado,idsucursal from empleados where correoElectronico=SPcorreoE limit 1;
     END IF;
 END IF;
 
