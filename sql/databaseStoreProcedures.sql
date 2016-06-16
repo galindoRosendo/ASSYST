@@ -24,20 +24,20 @@ IF(SPtipocliente = 'CLIENTE') THEN
 	IF((SELECT count(*) FROM clientes WHERE rfc=SPRFC)=0) THEN
 		INSERT INTO `alesandb`.`clientes` (`rfc`, `nombre`, `calle`, `numExt`, `telefono`, `estadoCliente`, `contactoEmail`, `contactoNombre_s`, `contactoApPaterno`, `contactoApMaterno`, `idCiudad`) 
 				VALUES (SPRFC,SPnombre , SPcalle, SPnumExt, SPtelefono, 'A',SPcorreoCont ,SPnombreCont , SPapPaternoCont, SPapMaternoCont, SPciudad);
-            SELECT 'NUEVO' as RESULTADO, SPRFC,SPnombre from alesandb.clientes where rfc=SPRFC;
+            SELECT 'NUEVO' as MENSAJE, RFC,nombre from alesandb.clientes where rfc=SPRFC;
             
     ELSEIF((SELECT count(*) FROM clientes WHERE rfc=SPRFC)=1) THEN
-			SELECT 'EXISTENTE' as RESULTADO, SPRFC,SPnombre from alesandb.clientes where rfc=SPRFC;
+			SELECT 'EXISTENTE' as MENSAJE, RFC,nombre from alesandb.clientes where rfc=SPRFC;
     END IF;
     
 ELSEIF(SPtipoCliente='PROVEDOR') THEN
 	IF((SELECT count(*) FROM provedores WHERE rfc=SPRFC)=0) THEN
 		INSERT INTO `alesandb`.`provedores` (`rfc`, `nombre`, `calle`, `numExt`, `telefono`, `estadoProvedor`, `contactoEmail`, `contactoNombre_s`, `contactoApPaterno`, `contactoApMaterno`, `idCiudad`) 
 				VALUES (SPRFC,SPnombre , SPcalle, SPnumExt, SPtelefono, 'A',SPcorreoCont ,SPnombreCont , SPapPaternoCont, SPapMaternoCont, SPciudad);
-            SELECT 'NUEVO' as RESULTADO, SPRFC,SPnombre from alesandb.provedores where rfc=SPRFC;
+            SELECT 'NUEVO' as MENSAJE, RFC,nombre from alesandb.provedores where rfc=SPRFC;
             
     ELSEIF((SELECT count(*) FROM provedores WHERE rfc=SPRFC)=1) THEN
-			SELECT 'EXISTENTE' as RESULTADO, SPRFC,SPnombre from alesandb.provedores where rfc=SPRFC;
+			SELECT 'EXISTENTE' as MENSAJE, RFC,nombre from alesandb.provedores where rfc=SPRFC;
     END IF;
 END IF;
 
@@ -111,6 +111,37 @@ ELSEIF((select count(*) from empleados where correoElectronico=SPcorreoE)=1) THE
 		select 'EXITO' as 'Mensaje',  idempleado,nombre_s,apPaterno,apMaterno,correoElectronico,contrasenia,departamento,estadoEmpleado,idsucursal from empleados where correoElectronico=SPcorreoE AND contrasenia = SPcontrasenia limit 1;
     ELSE 
 		select 'CONTRASEÑA ERRONEA' as 'Mensaje',  idempleado,nombre_s,apPaterno,apMaterno,correoElectronico,'' AS contrasenia,departamento,estadoEmpleado,idsucursal from empleados where correoElectronico=SPcorreoE limit 1;
+    END IF;
+END IF;
+
+END$$
+DELIMITER ;
+
+#Actualizar cliente/provedor
+DELIMITER $$
+CREATE PROCEDURE `SP_ActualizarClienteProvedor`(IN SPtipoCliente varchar(10),IN SPRFC varchar(15),IN SPnombre varchar(50), IN SPcalle varchar(40), IN SPnumExt varchar(10),IN SPtelefono varchar(15),IN SPcorreoCont varchar(40),IN SPnombreCont varchar(15),IN SPapPaternoCont varchar(15),IN SPapMaternoCont varchar(15),IN SPciudad int,IN SPEstado varchar(1))
+BEGIN
+
+IF(SPtipocliente = 'CLIENTE') THEN
+	IF((SELECT count(*) FROM clientes WHERE rfc=SPRFC)=1) THEN
+		UPDATE `alesandb`.`clientes`
+		SET RFC= SPRFC,NOMBRE= SPnombre , CALLE= SPcalle,numExt= SPnumExt, telefono=SPtelefono,estadoCliente= SPEstado,contactoEmail=SPcorreoCont ,contactoNombre_s=SPnombreCont ,contactoApPaterno= SPapPaternoCont,contactoApMaterno= SPapMaternoCont,idCiudad= SPciudad
+        WHERE rfc=SPRFC;
+		SELECT 'CLIENTE ACTUALIZADO' as MENSAJE, RFC,NOMBRE from alesandb.clientes where rfc=SPRFC;
+            
+    ELSE
+			SELECT 'CLIENTE INEXISTENTE' as MENSAJE, SPRFC,SPnombre;
+    END IF;
+    
+ELSEIF(SPtipoCliente='PROVEDOR') THEN
+	IF((SELECT count(*) FROM provedores WHERE rfc=SPRFC)=0) THEN
+		UPDATE `alesandb`.`provedores`
+		SET RFC= SPRFC,NOMBRE= SPnombre , CALLE= SPcalle,numExt= SPnumExt, telefono=SPtelefono,estadoCliente= SPEstado,contactoEmail=SPcorreoCont ,contactoNombre_s=SPnombreCont ,contactoApPaterno= SPapPaternoCont,contactoApMaterno= SPapMaternoCont,idCiudad= SPciudad
+        WHERE rfc=SPRFC;
+		SELECT 'PROVEDOR ACTUALIZADO' as MENSAJE, RFC,NOMBRE from alesandb.clientes where rfc=SPRFC;
+            
+    ELSE
+			SELECT 'PROVEDOR INEXISTENTE' as MENSAJE, SPRFC,SPnombre;
     END IF;
 END IF;
 

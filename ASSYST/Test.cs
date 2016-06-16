@@ -20,5 +20,15 @@ namespace ASSYST
         {
 
         }
+
+        private void metroTileItem6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDatosCPAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

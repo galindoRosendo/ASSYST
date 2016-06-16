@@ -5,9 +5,11 @@ SELECT * FROM alesandb.ciudades;
 SELECT * FROM alesandb.metodospago;
 SELECT * FROM alesandb.bancos;
 SELECT * FROM alesandb.empresa;
+describe empresa;
 SELECT * FROM alesandb.sucursales;
 SELECT * FROM alesandb.empleados;
 SELECT * FROM alesandb.clientes;
+DESCRIBE alesandb.clientes;
 SELECT * FROM alesandb.provedores;
 SELECT * FROM alesandb.transacciones;
 SELECT * FROM alesandb.cuentas;
@@ -46,6 +48,9 @@ CALL `alesandb`.`SP_CrearCuenta`('QWERTYUIOPAS');
 
 CALL `alesandb`.`SP_Transaccion`('QWERTYUIOPAS', 'Folio1', 1, 1, null, 400.00, 'ABONO');
 CALL `alesandb`.`SP_Transaccion`('POIUYTREWEQ', 'Folio5', 1, 1, null, 200.00, 'CARGO');
+
+CALL `alesandb`.`SP_ActualizarClienteProvedor`('CLIENTE', 'QWERTYUIOPAS', 'QUINTANILLA INC.','PERU', '2020', '8677845129', 'CLIENTE1@HOTMAIL.COM', 'HILARIO', 'QUINTANILLA', 'CHAPA', 1, 'A');
+
 
 
 

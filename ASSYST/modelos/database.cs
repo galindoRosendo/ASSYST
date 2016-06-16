@@ -130,6 +130,299 @@ namespace ASSYST.modelos
             return empresa; 
         }
 
+        public DataTable listaCP(string tipoBusqueda,string parametroBusqueda,string valorParametroBusqueda) 
+        {
+            DataTable dt = new DataTable("ClientesProvedores");
+            MySqlCommand cmd = new MySqlCommand();
+            string query = "";
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                if (tipoBusqueda.Equals("Clientes"))
+                {
+                    switch (parametroBusqueda)
+                    {
+                        case "Todos":
+                            query = "SELECT * "+
+                                    "FROM alesandb.clientes;";
+                            cmd = new MySqlCommand(query, conn);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        case "RFC":
+                            query = "SELECT * "+
+                                    "FROM alesandb.clientes "+
+                                    "WHERE RFC = @SPRFC;";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@SPRFC", valorParametroBusqueda);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        case "Nombre":
+                            query = "SELECT * "+
+                                    "FROM alesandb.clientes "+
+                                    "WHERE nombre = @SPnombre;";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@SPnombre", valorParametroBusqueda);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                }
+                else if (tipoBusqueda.Equals("Provedores"))
+                {
+                    switch (parametroBusqueda)
+                    {
+                        case "Todos":
+                            query = "SELECT * "+
+                                    "FROM alesandb.provedores;";
+                            cmd = new MySqlCommand(query, conn);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        case "RFC":
+                            query = "SELECT * " +
+                                    "FROM alesandb.provedores " +
+                                    "WHERE RFC = @SPRFC;";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@SPRFC", valorParametroBusqueda);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        case "Nombre":
+                            query = "SELECT * " +
+                                    "FROM alesandb.provedores " +
+                                    "WHERE nombre = @SPnombre;";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@SPnombre", valorParametroBusqueda);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (tipoBusqueda.Equals("Ambos"))
+                {
+                    switch (parametroBusqueda)
+                    {
+                        case "Todos":
+                            query = "SELECT *,'PROVEDOR' AS Tipo "+
+                                    "FROM alesandb.provedores "+
+                                    "UNION "+
+                                    "SELECT * ,'CLIENTE' AS Tipo "+
+                                    "FROM alesandb.clientes;";
+                            cmd = new MySqlCommand(query, conn);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        case "RFC":
+                            query = "SELECT *,'PROVEDOR' AS Tipo "+
+                                    "FROM alesandb.provedores "+
+                                    "WHERE RFC = @SPRFC "+
+                                    "UNION "+
+                                    "SELECT *,'CLIENTE' AS Tipo "+
+                                    "FROM alesandb.clientes "+
+                                    "WHERE RFC = @SPRFC2;";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@SPRFC", valorParametroBusqueda);
+                            cmd.Parameters.AddWithValue("@SPRFC2", valorParametroBusqueda);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        case "Nombre":
+                            query = "SELECT *,'PROVEDOR' AS Tipo "+
+                                    "FROM alesandb.provedores "+
+                                    "WHERE nombre = @SPnombre "+
+                                    "UNION "+
+                                    "SELECT *,'CLIENTE' AS Tipo "+
+                                    "FROM alesandb.clientes "+
+                                    "WHERE nombre = @SPnombre2;";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@SPnombre", valorParametroBusqueda);
+                            cmd.Parameters.AddWithValue("@SPnombre2", valorParametroBusqueda);
+                            conn.Open();
+                            cmd.Prepare();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else { log = "Parametro no valido"; }
+                
+            }
+            catch (MySqlException MSQLEx)
+            {
+
+                log = MSQLEx.Message;
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+            return dt; 
+
+        }
+
+        public DataTable insertarClienteProvedor(object empresa) 
+        {
+            DataTable dt= new DataTable("Resultado");
+            MySqlCommand cmd= new MySqlCommand();
+            string query = "";
+            string tipoEmp = "";
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                //Datos para comprobar clase de objeto empresa
+                Type cli = typeof(Cliente);
+                Type pro = typeof(Provedor);
+                Type emp = empresa.GetType();
+
+                if (emp.Equals(cli))
+                {
+                    tipoEmp = "CLIENTE";
+                    Cliente empAct =(Cliente)empresa;
+                    query = "CALL `alesandb`.`SP_CrearClienteProvedor`(@tipo, @rfc, @nombre, @calle, @nExt,@telefono, @correoContacto, @nombreContacto, @apPatContacto, @apMatContacto, @idCiudad);";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@tipo", tipoEmp);
+                    cmd.Parameters.AddWithValue("@rfc",empAct.RFC);
+                    cmd.Parameters.AddWithValue("@nombre",empAct.Nombre);
+                    cmd.Parameters.AddWithValue("@calle",empAct.Calle);
+                    cmd.Parameters.AddWithValue("@nExt",empAct.NExt);
+                    cmd.Parameters.AddWithValue("@telefono",empAct.Telefono);
+                    cmd.Parameters.AddWithValue("@correoContacto",empAct.CorreoContacto);
+                    cmd.Parameters.AddWithValue("@nombreContacto",empAct.NombreContacto);
+                    cmd.Parameters.AddWithValue("@apPatContacto",empAct.ApPatContacto);
+                    cmd.Parameters.AddWithValue("@apMatContacto",empAct.ApMatContacto);
+                    cmd.Parameters.AddWithValue("@idCiudad",empAct.IdCiudad);
+                    conn.Open();
+                    cmd.Prepare();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    Log = dt.Rows[0]["MENSAJE"].ToString();
+                }
+                else if (emp.Equals(pro))
+                {
+                    tipoEmp = "PROVEDOR";
+                    Provedor empAct = (Provedor)empresa;
+                    query = "CALL `alesandb`.`SP_CrearClienteProvedor`(@tipo, @rfc, @nombre, @calle, @nExt,@telefono, @correoContacto, @nombreContacto, @apPatContacto, @apMatContacto, @idCiudad);";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@tipo", tipoEmp);
+                    cmd.Parameters.AddWithValue("@rfc", empAct.RFC);
+                    cmd.Parameters.AddWithValue("@nombre", empAct.Nombre);
+                    cmd.Parameters.AddWithValue("@calle", empAct.Calle);
+                    cmd.Parameters.AddWithValue("@nExt", empAct.NExt);
+                    cmd.Parameters.AddWithValue("@telefono", empAct.Telefono);
+                    cmd.Parameters.AddWithValue("@correoContacto", empAct.CorreoContacto);
+                    cmd.Parameters.AddWithValue("@nombreContacto", empAct.NombreContacto);
+                    cmd.Parameters.AddWithValue("@apPatContacto", empAct.ApPatContacto);
+                    cmd.Parameters.AddWithValue("@apMatContacto", empAct.ApMatContacto);
+                    cmd.Parameters.AddWithValue("@idCiudad", empAct.IdCiudad);
+                    conn.Open();
+                    cmd.Prepare();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    Log = dt.Rows[0]["MENSAJE"].ToString();
+                    
+                }
+                else { log = "Ningun tipo"; }
+
+                
+            }
+            catch (MySqlException ex)
+            {
+                log = ex.Message;
+            }
+            finally 
+            {
+                conn.Close();
+                cmd.Dispose();
+            }
+            return dt;
+        }
+
+        public object cargarDatosCliPro(object empresaParcial,string tipo)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+            try
+            {
+                if (tipo.Equals("Clientes")) 
+                {
+                    Cliente clienteParcial =(Cliente)empresaParcial;
+                    cmd = new MySqlCommand("SELECT rfc,nombre,calle,numExt,telefono,estadoCliente,contactoEmail,contactoNombre_s,contactoApPaterno,contactoApMaterno,idCiudad FROM alesandb.clientes WHERE rfc=@SPRFC;", conn);
+                    cmd.Parameters.Add(new MySqlParameter("@SPRFC", clienteParcial.RFC));
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    clienteParcial.RFC = dt.Rows[0]["rfc"].ToString();
+                    clienteParcial.Nombre = dt.Rows[0]["nombre"].ToString();
+                    clienteParcial.Calle = dt.Rows[0]["calle"].ToString();
+                    clienteParcial.NExt = dt.Rows[0]["numExt"].ToString();
+                    clienteParcial.Telefono = dt.Rows[0]["telefono"].ToString();
+                    clienteParcial.EstadoCliente = Convert.ToChar(dt.Rows[0]["estadoCliente"].ToString());
+                    clienteParcial.CorreoContacto = dt.Rows[0]["contactoEmail"].ToString();
+                    clienteParcial.NombreContacto = dt.Rows[0]["contactoNombre_s"].ToString();
+                    clienteParcial.ApPatContacto = dt.Rows[0]["contactoApPaterno"].ToString();
+                    clienteParcial.ApMatContacto = dt.Rows[0]["contactoApMaterno"].ToString();
+                    clienteParcial.IdCiudad = Convert.ToInt32(dt.Rows[0]["idCiudad"].ToString());
+                    empresaParcial = (object)clienteParcial;
+                }
+                else if (tipo.Equals("Provedores")) 
+                {
+                    Provedor provParcial = (Provedor)empresaParcial;
+                    cmd = new MySqlCommand("SELECT rfc,nombre,calle,numExt,telefono,estadoProvedor,contactoEmail,contactoNombre_s,contactoApPaterno,contactoApMaterno,idCiudad FROM alesandb.provedores WHERE rfc=@SPRFC;", conn);
+                    cmd.Parameters.Add(new MySqlParameter("@SPRFC", provParcial.RFC));
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    provParcial.RFC = dt.Rows[0]["rfc"].ToString();
+                    provParcial.Nombre = dt.Rows[0]["nombre"].ToString();
+                    provParcial.Calle = dt.Rows[0]["calle"].ToString();
+                    provParcial.NExt = dt.Rows[0]["numExt"].ToString();
+                    provParcial.Telefono = dt.Rows[0]["telefono"].ToString();
+                    provParcial.EstadoProvedor = Convert.ToChar(dt.Rows[0]["estadoProvedor"].ToString());
+                    provParcial.CorreoContacto = dt.Rows[0]["contactoEmail"].ToString();
+                    provParcial.NombreContacto = dt.Rows[0]["contactoNombre_s"].ToString();
+                    provParcial.ApPatContacto = dt.Rows[0]["contactoApPaterno"].ToString();
+                    provParcial.ApMatContacto = dt.Rows[0]["contactoApMaterno"].ToString();
+                    provParcial.IdCiudad = Convert.ToInt32(dt.Rows[0]["idCiudad"].ToString());
+                    empresaParcial = (object)provParcial;
+                }
+                
+            }
+            catch (MySqlException MySQLex)
+            {
+                log = MySQLex.Message;
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+            return empresaParcial;
+        }
         #endregion
 
     }
