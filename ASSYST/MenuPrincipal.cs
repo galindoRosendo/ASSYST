@@ -180,35 +180,35 @@ namespace ASSYST
                 database datos = new database();
                 if (tipo.Equals("Clientes"))
                 {
-                    Cliente cliente = new Cliente() { RFC = dgvActualizar.Rows[e.RowIndex].Cells["rfc"].Value.ToString() };
-                    cliente = (Cliente)datos.cargarDatosCliPro(cliente, tipo);
-                    txtCPActualizarRFC.Text = cliente.RFC;
-                    txtCPActualizarNombre.Text = cliente.Nombre;
-                    txtCPActualizarCalle.Text = cliente.Calle;
-                    txtCPActualizarNExt.Text = cliente.NExt;
-                    txtCPActualizarTelefono.Text = cliente.Telefono;
-                    cmbCPActualizarCiudad.Text = cliente.IdCiudad.ToString();
-                    cmbCPActualizarEstado.Text = cliente.EstadoCliente.ToString();
-                    txtCPActualizarNombreCont.Text = cliente.NombreContacto;
-                    txtCPActualizarApPaternoCont.Text = cliente.ApPatContacto;
-                    txtCPActualizarApMatCont.Text = cliente.ApMatContacto;
-                    txtCPActualizarCorreoCont.Text = cliente.CorreoContacto;
+                    PDatos.DatosCliente = new Cliente() { RFC = dgvActualizar.Rows[e.RowIndex].Cells["rfc"].Value.ToString() };
+                    PDatos.DatosCliente = (Cliente)datos.cargarDatosCliPro(PDatos.DatosCliente, tipo);
+                    txtCPActualizarRFC.Text = PDatos.DatosCliente.RFC;
+                    txtCPActualizarNombre.Text = PDatos.DatosCliente.Nombre;
+                    txtCPActualizarCalle.Text = PDatos.DatosCliente.Calle;
+                    txtCPActualizarNExt.Text = PDatos.DatosCliente.NExt;
+                    txtCPActualizarTelefono.Text = PDatos.DatosCliente.Telefono;
+                    cmbCPActualizarCiudad.Text = PDatos.DatosCliente.IdCiudad.ToString();
+                    cmbCPActualizarEstado.Text = PDatos.DatosCliente.EstadoCliente.ToString();
+                    txtCPActualizarNombreCont.Text = PDatos.DatosCliente.NombreContacto;
+                    txtCPActualizarApPaternoCont.Text = PDatos.DatosCliente.ApPatContacto;
+                    txtCPActualizarApMatCont.Text = PDatos.DatosCliente.ApMatContacto;
+                    txtCPActualizarCorreoCont.Text = PDatos.DatosCliente.CorreoContacto;
                 }
                 else if (tipo.Equals("Provedores"))
                 {
-                    Provedor provedor = new Provedor() { RFC = dgvActualizar.Rows[e.RowIndex].Cells["rfc"].Value.ToString() };
-                    provedor = (Provedor)datos.cargarDatosCliPro(provedor, tipo);
-                    txtCPActualizarRFC.Text = provedor.RFC;
-                    txtCPActualizarNombre.Text = provedor.Nombre;
-                    txtCPActualizarCalle.Text = provedor.Calle;
-                    txtCPActualizarNExt.Text = provedor.NExt;
-                    txtCPActualizarTelefono.Text = provedor.Telefono;
-                    cmbCPActualizarCiudad.Text = provedor.IdCiudad.ToString();
-                    cmbCPActualizarEstado.Text = provedor.EstadoProvedor.ToString();
-                    txtCPActualizarNombreCont.Text = provedor.NombreContacto;
-                    txtCPActualizarApPaternoCont.Text = provedor.ApPatContacto;
-                    txtCPActualizarApMatCont.Text = provedor.ApMatContacto;
-                    txtCPActualizarCorreoCont.Text = provedor.CorreoContacto;
+                    PDatos.DatosProvedor = new Provedor() { RFC = dgvActualizar.Rows[e.RowIndex].Cells["rfc"].Value.ToString() };
+                    PDatos.DatosProvedor = (Provedor)datos.cargarDatosCliPro(PDatos.DatosProvedor, tipo);
+                    txtCPActualizarRFC.Text = PDatos.DatosProvedor.RFC;
+                    txtCPActualizarNombre.Text = PDatos.DatosProvedor.Nombre;
+                    txtCPActualizarCalle.Text = PDatos.DatosProvedor.Calle;
+                    txtCPActualizarNExt.Text = PDatos.DatosProvedor.NExt;
+                    txtCPActualizarTelefono.Text = PDatos.DatosProvedor.Telefono;
+                    cmbCPActualizarCiudad.Text = PDatos.DatosProvedor.IdCiudad.ToString();
+                    cmbCPActualizarEstado.Text = PDatos.DatosProvedor.EstadoProvedor.ToString();
+                    txtCPActualizarNombreCont.Text = PDatos.DatosProvedor.NombreContacto;
+                    txtCPActualizarApPaternoCont.Text = PDatos.DatosProvedor.ApPatContacto;
+                    txtCPActualizarApMatCont.Text = PDatos.DatosProvedor.ApMatContacto;
+                    txtCPActualizarCorreoCont.Text = PDatos.DatosProvedor.CorreoContacto;
                 }
             }
             catch (Exception ex)
@@ -216,8 +216,72 @@ namespace ASSYST
 
                 MessageBox.Show(ex.Message);
             }
-            
 
+
+        }
+
+        private void btnDatosCPActActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                database datos = new database();
+                DataTable resultadoSP = new DataTable("ResultadoSPActualizarCP");
+                if (tipo.Equals("Clientes"))
+                {
+                    PDatos.DatosCliente = new Cliente();
+                    PDatos.DatosCliente.RFC = txtCPActualizarRFC.Text;
+                    PDatos.DatosCliente.Nombre =txtCPActualizarNombre.Text;
+                    PDatos.DatosCliente.Calle = txtCPActualizarCalle.Text;
+                    PDatos.DatosCliente.NExt = txtCPActualizarNExt.Text;
+                    PDatos.DatosCliente.Telefono = txtCPActualizarTelefono.Text;
+                    PDatos.DatosCliente.IdCiudad =Convert.ToInt32(cmbCPActualizarCiudad.Text);
+                    PDatos.DatosCliente.EstadoCliente = Convert.ToChar(cmbCPActualizarEstado.Text);
+                    PDatos.DatosCliente.NombreContacto = txtCPActualizarNombreCont.Text;
+                    PDatos.DatosCliente.ApPatContacto = txtCPActualizarApPaternoCont.Text;
+                    PDatos.DatosCliente.ApMatContacto = txtCPActualizarApMatCont.Text;
+                    PDatos.DatosCliente.CorreoContacto = txtCPActualizarCorreoCont.Text;
+                    resultadoSP = datos.actualizarCP(PDatos.DatosCliente);
+
+                }
+                else if (tipo.Equals("Provedores"))
+                {
+                    PDatos.DatosProvedor = new Provedor();
+                    PDatos.DatosProvedor.RFC = txtCPActualizarRFC.Text;
+                    PDatos.DatosProvedor.Nombre = txtCPActualizarNombre.Text;
+                    PDatos.DatosProvedor.Calle = txtCPActualizarCalle.Text;
+                    PDatos.DatosProvedor.NExt = txtCPActualizarNExt.Text;
+                    PDatos.DatosProvedor.Telefono = txtCPActualizarTelefono.Text;
+                    PDatos.DatosProvedor.IdCiudad = Convert.ToInt32(cmbCPActualizarCiudad.Text);
+                    PDatos.DatosProvedor.EstadoProvedor = Convert.ToChar(cmbCPActualizarEstado.Text);
+                    PDatos.DatosProvedor.NombreContacto = txtCPActualizarNombreCont.Text;
+                    PDatos.DatosProvedor.ApPatContacto = txtCPActualizarApPaternoCont.Text;
+                    PDatos.DatosProvedor.ApMatContacto = txtCPActualizarApMatCont.Text;
+                    PDatos.DatosProvedor.CorreoContacto = txtCPActualizarCorreoCont.Text;
+
+                    resultadoSP = datos.actualizarCP(PDatos.DatosProvedor);
+                }
+
+                MessageBox.Show(resultadoSP.Rows[0]["MENSAJE"].ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                //if (resultadoSP.Rows[0]["MENSAJE"].Equals("CLIENTE ACTUALIZADO")) 
+                //{
+                //}
+                //else if (resultadoSP.Rows[0]["MENSAJE"].Equals("CLIENTE INEXISTENTE")) 
+                //{
+                //}
+                //else if (resultadoSP.Rows[0]["MENSAJE"].Equals("PROVEDOR ACTUALIZADO")) 
+                //{
+                //}
+                //else if (resultadoSP.Rows[0]["MENSAJE"].Equals("PROVEDOR INEXISTENTE")) 
+                //{
+                //}
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

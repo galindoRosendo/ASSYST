@@ -74,6 +74,7 @@
     <Compile Include="modelos\Provedor.cs" />
     <Compile Include="modelos\Sucursal.cs" />
     <Compile Include="modelos\Transaccion.cs" />
+    <Compile Include="modelos\PDatos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs">

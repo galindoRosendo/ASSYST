@@ -423,6 +423,85 @@ namespace ASSYST.modelos
             }
             return empresaParcial;
         }
+
+        public DataTable actualizarCP(object empresa)
+        {
+            DataTable dt = new DataTable("Resultado");
+            MySqlCommand cmd = new MySqlCommand();
+            string query = "";
+            string tipoEmp = "";
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                //Datos para comprobar clase de objeto empresa
+                Type cli = typeof(Cliente);
+                Type pro = typeof(Provedor);
+                Type emp = empresa.GetType();
+
+                if (emp.Equals(cli))
+                {
+                    tipoEmp = "CLIENTE";
+                    Cliente empAct = (Cliente)empresa;
+                    query = "CALL `alesandb`.`SP_ActualizarClienteProvedor`(@tipo, @rfc, @nombre, @calle, @nExt,@telefono, @correoContacto, @nombreContacto, @apPatContacto, @apMatContacto, @idCiudad, @estado);";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@tipo", tipoEmp);
+                    cmd.Parameters.AddWithValue("@rfc", empAct.RFC);
+                    cmd.Parameters.AddWithValue("@nombre", empAct.Nombre);
+                    cmd.Parameters.AddWithValue("@calle", empAct.Calle);
+                    cmd.Parameters.AddWithValue("@nExt", empAct.NExt);
+                    cmd.Parameters.AddWithValue("@telefono", empAct.Telefono);
+                    cmd.Parameters.AddWithValue("@correoContacto", empAct.CorreoContacto);
+                    cmd.Parameters.AddWithValue("@nombreContacto", empAct.NombreContacto);
+                    cmd.Parameters.AddWithValue("@apPatContacto", empAct.ApPatContacto);
+                    cmd.Parameters.AddWithValue("@apMatContacto", empAct.ApMatContacto);
+                    cmd.Parameters.AddWithValue("@idCiudad", empAct.IdCiudad);
+                    cmd.Parameters.AddWithValue("@estado", empAct.EstadoCliente);
+                    conn.Open();
+                    cmd.Prepare();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    Log = dt.Rows[0]["MENSAJE"].ToString();
+                }
+                else if (emp.Equals(pro))
+                {
+                    tipoEmp = "PROVEDOR";
+                    Provedor empAct = (Provedor)empresa;
+                    query = "CALL `alesandb`.`SP_ActualizarClienteProvedor`(@tipo, @rfc, @nombre, @calle, @nExt,@telefono, @correoContacto, @nombreContacto, @apPatContacto, @apMatContacto, @idCiudad,@estado);";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@tipo", tipoEmp);
+                    cmd.Parameters.AddWithValue("@rfc", empAct.RFC);
+                    cmd.Parameters.AddWithValue("@nombre", empAct.Nombre);
+                    cmd.Parameters.AddWithValue("@calle", empAct.Calle);
+                    cmd.Parameters.AddWithValue("@nExt", empAct.NExt);
+                    cmd.Parameters.AddWithValue("@telefono", empAct.Telefono);
+                    cmd.Parameters.AddWithValue("@correoContacto", empAct.CorreoContacto);
+                    cmd.Parameters.AddWithValue("@nombreContacto", empAct.NombreContacto);
+                    cmd.Parameters.AddWithValue("@apPatContacto", empAct.ApPatContacto);
+                    cmd.Parameters.AddWithValue("@apMatContacto", empAct.ApMatContacto);
+                    cmd.Parameters.AddWithValue("@idCiudad", empAct.IdCiudad);
+                    cmd.Parameters.AddWithValue("@estado", empAct.EstadoProvedor);
+                    conn.Open();
+                    cmd.Prepare();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    Log = dt.Rows[0]["MENSAJE"].ToString();
+
+                }
+                else { log = "Ningun tipo"; }
+
+
+            }
+            catch (MySqlException ex)
+            {
+                log = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Dispose();
+            }
+            return dt;
+        }
         #endregion
 
     }
