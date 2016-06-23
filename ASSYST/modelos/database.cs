@@ -502,6 +502,40 @@ namespace ASSYST.modelos
             }
             return dt;
         }
+
+        public DataTable listaCuentas() 
+        {
+            DataTable dt = new DataTable("Cuentas");
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                cmd = new MySqlCommand("SELECT cli.nombre,c.rfc,c.ultimoPago,c.saldo,c.estadoCuenta,'Cliente' as Tipo "+
+                                       "FROM alesandb.cuentas c "+
+                                       "JOIN alesandb.clientes cli ON (c.RFC=cli.RFC) "+
+                                       "UNION "+
+                                       "SELECT prov.nombre,c.rfc,c.ultimoPago,c.saldo,c.estadoCuenta,'Provedor' as Tipo "+
+                                       "FROM alesandb.cuentas c "+
+                                       "JOIN alesandb.provedores prov ON (c.RFC=prov.RFC)", conn);// Prepared statement SELECT * FROM admin WHERE admin_username=@val1 AND admin_password=PASSWORD(@val2)
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                conn.Open();
+                cmd.Prepare();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+            }
+            catch (MySqlException MSQLEx)
+            {
+
+                log = MSQLEx.Message;
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+
+
+            return dt; 
+        }
         #endregion
 
     }

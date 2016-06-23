@@ -45,10 +45,10 @@ SELECT *,'CLIENTE' AS Tipo
 FROM alesandb.clientes
 WHERE nombre = '';
 
-SELECT cli.nombre,c.rfc,c.ultimoPago,c.saldo,c.estadoCuenta
+SELECT cli.nombre,c.rfc,c.ultimoPago,c.saldo,c.estadoCuenta,'Cliente' as Tipo
 FROM alesandb.cuentas c 
 JOIN alesandb.clientes cli ON (c.RFC=cli.RFC)
 UNION
-SELECT prov.nombre,c.rfc,c.ultimoPago,c.saldo,c.estadoCuenta
+SELECT prov.nombre,c.rfc,c.ultimoPago,c.saldo,c.estadoCuenta,'Provedor' as Tipo
 FROM alesandb.cuentas c 
 JOIN alesandb.provedores prov ON (c.RFC=prov.RFC)

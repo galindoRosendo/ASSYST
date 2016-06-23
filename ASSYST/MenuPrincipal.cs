@@ -14,6 +14,8 @@ namespace ASSYST
     {
         Empleado empleadoActual;
         Empresa empresaActual;
+        DataTable cuentas;
+        database datos;
         public MenuPrincipal(Empleado empleado, Empresa empresa)
         {
             InitializeComponent();
@@ -23,9 +25,11 @@ namespace ASSYST
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            datos = new database();
             lblNombreEmpleado.Text = empleadoActual.NombreCompleto;
             lblNombreEmpresa.Text = empresaActual.NombreEmpresa;
+            cuentas = datos.listaCuentas();
+            dgvCuentasEstados.DataSource = cuentas;
         }
 
         private void btnDatosCPAceptar_Click(object sender, EventArgs e)
@@ -282,6 +286,13 @@ namespace ASSYST
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCuentasEstadosActualizar_Click(object sender, EventArgs e)
+        {
+            datos = new database();
+            cuentas = datos.listaCuentas();
+            dgvCuentasEstados.DataSource = cuentas;
         }
     }
 }

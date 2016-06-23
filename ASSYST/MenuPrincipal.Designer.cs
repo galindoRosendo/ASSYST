@@ -29,11 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevComponents.DotNetBar.Layout.Background background3 = new DevComponents.DotNetBar.Layout.Background();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabControl4 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel12 = new DevComponents.DotNetBar.TabControlPanel();
+            this.groupPanel17 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgvCuentasEstados = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel13 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tbCuentas = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabControl2 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tbSucursales = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tbEmpleados = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tbConfiguracion = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabControl3 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel10 = new DevComponents.DotNetBar.TabControlPanel();
@@ -132,17 +152,6 @@
             this.tbEgresos = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.tbIngresos = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tbCuentas = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabControl2 = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tbSucursales = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tbEmpleados = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tbConfiguracion = new DevComponents.DotNetBar.TabItem(this.components);
             this.lblNombreEmpleado = new DevComponents.DotNetBar.LabelX();
             this.lblNombreEmpresa = new DevComponents.DotNetBar.LabelX();
             this.layoutGroup1 = new DevComponents.DotNetBar.Layout.LayoutGroup();
@@ -150,17 +159,22 @@
             this.layoutControlItem3 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem1 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.tabControl4 = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel12 = new DevComponents.DotNetBar.TabControlPanel();
-            this.groupPanel17 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel13 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem5 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbalesan = new DevComponents.DotNetBar.Layout.LayoutControlItem();
+            this.btnCuentasEstadosActualizar = new DevComponents.DotNetBar.ButtonX();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabControlPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl4)).BeginInit();
+            this.tabControl4.SuspendLayout();
+            this.tabControlPanel12.SuspendLayout();
+            this.groupPanel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasEstados)).BeginInit();
+            this.tabControlPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
+            this.tabControl2.SuspendLayout();
             this.tabControlPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl3)).BeginInit();
             this.tabControl3.SuspendLayout();
@@ -185,20 +199,13 @@
             this.groupPanel3.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosCP)).BeginInit();
-            this.tabControlPanel3.SuspendLayout();
-            this.tabControlPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
-            this.tabControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl4)).BeginInit();
-            this.tabControl4.SuspendLayout();
-            this.tabControlPanel12.SuspendLayout();
-            this.groupPanel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.BackColor = System.Drawing.Color.White;
+            this.layoutControl1.Controls.Add(this.pictureBox1);
             this.layoutControl1.Controls.Add(this.tabControl1);
             this.layoutControl1.Controls.Add(this.lblNombreEmpleado);
             this.layoutControl1.Controls.Add(this.lblNombreEmpresa);
@@ -221,20 +228,20 @@
             // 
             this.tabControl1.BackColor = System.Drawing.Color.White;
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel3);
-            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
-            this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.ForeColor = System.Drawing.Color.Black;
-            this.tabControl1.Location = new System.Drawing.Point(8, 83);
+            this.tabControl1.Location = new System.Drawing.Point(8, 158);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl1.SelectedTabIndex = 1;
-            this.tabControl1.Size = new System.Drawing.Size(1065, 660);
+            this.tabControl1.SelectedTabIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1065, 585);
             this.tabControl1.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 2;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tbCuentas);
             this.tabControl1.Tabs.Add(this.tbIngresos);
@@ -242,6 +249,275 @@
             this.tabControl1.Tabs.Add(this.tbDatos);
             this.tabControl1.Tabs.Add(this.tbConfiguracion);
             this.tabControl1.Text = "Ingresos";
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.tabControl4);
+            this.tabControlPanel3.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(1065, 558);
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 3;
+            this.tabControlPanel3.TabItem = this.tbCuentas;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.BackColor = System.Drawing.Color.White;
+            this.tabControl4.CanReorderTabs = true;
+            this.tabControl4.Controls.Add(this.tabControlPanel12);
+            this.tabControl4.Controls.Add(this.tabControlPanel13);
+            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl4.ForeColor = System.Drawing.Color.Black;
+            this.tabControl4.Location = new System.Drawing.Point(1, 1);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tabControl4.SelectedTabIndex = 2;
+            this.tabControl4.Size = new System.Drawing.Size(1063, 556);
+            this.tabControl4.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
+            this.tabControl4.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
+            this.tabControl4.TabIndex = 1;
+            this.tabControl4.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
+            this.tabControl4.Tabs.Add(this.tabItem3);
+            this.tabControl4.Tabs.Add(this.tabItem4);
+            this.tabControl4.Text = "Estados";
+            // 
+            // tabControlPanel12
+            // 
+            this.tabControlPanel12.Controls.Add(this.groupPanel17);
+            this.tabControlPanel12.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel12.Location = new System.Drawing.Point(0, 0);
+            this.tabControlPanel12.Name = "tabControlPanel12";
+            this.tabControlPanel12.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel12.Size = new System.Drawing.Size(1063, 529);
+            this.tabControlPanel12.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel12.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel12.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel12.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Top)));
+            this.tabControlPanel12.Style.GradientAngle = -90;
+            this.tabControlPanel12.TabIndex = 1;
+            this.tabControlPanel12.TabItem = this.tabItem3;
+            // 
+            // groupPanel17
+            // 
+            this.groupPanel17.BackColor = System.Drawing.Color.White;
+            this.groupPanel17.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel17.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel17.Controls.Add(this.btnCuentasEstadosActualizar);
+            this.groupPanel17.Controls.Add(this.dgvCuentasEstados);
+            this.groupPanel17.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupPanel17.Location = new System.Drawing.Point(6, 4);
+            this.groupPanel17.Name = "groupPanel17";
+            this.groupPanel17.Size = new System.Drawing.Size(1051, 596);
+            // 
+            // 
+            // 
+            this.groupPanel17.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel17.Style.BackColorGradientAngle = 90;
+            this.groupPanel17.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel17.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel17.Style.BorderBottomWidth = 1;
+            this.groupPanel17.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel17.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel17.Style.BorderLeftWidth = 1;
+            this.groupPanel17.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel17.Style.BorderRightWidth = 1;
+            this.groupPanel17.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel17.Style.BorderTopWidth = 1;
+            this.groupPanel17.Style.CornerDiameter = 4;
+            this.groupPanel17.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel17.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel17.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel17.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupPanel17.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel17.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel17.TabIndex = 3;
+            this.groupPanel17.Text = "Informacion";
+            // 
+            // dgvCuentasEstados
+            // 
+            this.dgvCuentasEstados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCuentasEstados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCuentasEstados.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvCuentasEstados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dgvCuentasEstados.Location = new System.Drawing.Point(158, 111);
+            this.dgvCuentasEstados.Name = "dgvCuentasEstados";
+            this.dgvCuentasEstados.RowHeadersVisible = false;
+            this.dgvCuentasEstados.Size = new System.Drawing.Size(703, 308);
+            this.dgvCuentasEstados.TabIndex = 0;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabControlPanel12;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Estados";
+            // 
+            // tabControlPanel13
+            // 
+            this.tabControlPanel13.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel13.Location = new System.Drawing.Point(0, 0);
+            this.tabControlPanel13.Name = "tabControlPanel13";
+            this.tabControlPanel13.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel13.Size = new System.Drawing.Size(1063, 529);
+            this.tabControlPanel13.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel13.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel13.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel13.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Top)));
+            this.tabControlPanel13.Style.GradientAngle = -90;
+            this.tabControlPanel13.TabIndex = 2;
+            this.tabControlPanel13.TabItem = this.tabItem4;
+            // 
+            // tabItem4
+            // 
+            this.tabItem4.AttachedControl = this.tabControlPanel13;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Crear Cuenta";
+            // 
+            // tbCuentas
+            // 
+            this.tbCuentas.AttachedControl = this.tabControlPanel3;
+            this.tbCuentas.Name = "tbCuentas";
+            this.tbCuentas.Text = "Cuentas";
+            // 
+            // tabControlPanel5
+            // 
+            this.tabControlPanel5.Controls.Add(this.tabControl2);
+            this.tabControlPanel5.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel5.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel5.Name = "tabControlPanel5";
+            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel5.Size = new System.Drawing.Size(1065, 558);
+            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel5.Style.GradientAngle = 90;
+            this.tabControlPanel5.TabIndex = 5;
+            this.tabControlPanel5.TabItem = this.tbConfiguracion;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.BackColor = System.Drawing.Color.White;
+            this.tabControl2.CanReorderTabs = true;
+            this.tabControl2.Controls.Add(this.tabControlPanel6);
+            this.tabControl2.Controls.Add(this.tabControlPanel7);
+            this.tabControl2.Controls.Add(this.tabControlPanel8);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.ForeColor = System.Drawing.Color.Black;
+            this.tabControl2.Location = new System.Drawing.Point(1, 1);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tabControl2.SelectedTabIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1063, 556);
+            this.tabControl2.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
+            this.tabControl2.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
+            this.tabControl2.TabIndex = 0;
+            this.tabControl2.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
+            this.tabControl2.Tabs.Add(this.tabItem1);
+            this.tabControl2.Tabs.Add(this.tbSucursales);
+            this.tabControl2.Tabs.Add(this.tbEmpleados);
+            this.tabControl2.Text = "tabControl2";
+            // 
+            // tabControlPanel6
+            // 
+            this.tabControlPanel6.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(1063, 529);
+            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Top)));
+            this.tabControlPanel6.Style.GradientAngle = -90;
+            this.tabControlPanel6.TabIndex = 1;
+            this.tabControlPanel6.TabItem = this.tabItem1;
+            // 
+            // tabItem1
+            // 
+            this.tabItem1.AttachedControl = this.tabControlPanel6;
+            this.tabItem1.Name = "tabItem1";
+            this.tabItem1.Text = "Empresa";
+            // 
+            // tabControlPanel7
+            // 
+            this.tabControlPanel7.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tabControlPanel7.Name = "tabControlPanel7";
+            this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel7.Size = new System.Drawing.Size(1063, 529);
+            this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel7.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Top)));
+            this.tabControlPanel7.Style.GradientAngle = -90;
+            this.tabControlPanel7.TabIndex = 2;
+            this.tabControlPanel7.TabItem = this.tbSucursales;
+            // 
+            // tbSucursales
+            // 
+            this.tbSucursales.AttachedControl = this.tabControlPanel7;
+            this.tbSucursales.Name = "tbSucursales";
+            this.tbSucursales.Text = "Sucursales";
+            // 
+            // tabControlPanel8
+            // 
+            this.tabControlPanel8.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel8.Location = new System.Drawing.Point(0, 0);
+            this.tabControlPanel8.Name = "tabControlPanel8";
+            this.tabControlPanel8.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel8.Size = new System.Drawing.Size(1063, 529);
+            this.tabControlPanel8.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel8.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel8.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tabControlPanel8.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Top)));
+            this.tabControlPanel8.Style.GradientAngle = -90;
+            this.tabControlPanel8.TabIndex = 3;
+            this.tabControlPanel8.TabItem = this.tbEmpleados;
+            // 
+            // tbEmpleados
+            // 
+            this.tbEmpleados.AttachedControl = this.tabControlPanel8;
+            this.tbEmpleados.Name = "tbEmpleados";
+            this.tbEmpleados.Text = "Empleados";
+            // 
+            // tbConfiguracion
+            // 
+            this.tbConfiguracion.AttachedControl = this.tabControlPanel5;
+            this.tbConfiguracion.Name = "tbConfiguracion";
+            this.tbConfiguracion.Text = "Configuracion";
             // 
             // tabControlPanel4
             // 
@@ -251,7 +527,7 @@
             this.tabControlPanel4.Location = new System.Drawing.Point(0, 27);
             this.tabControlPanel4.Name = "tabControlPanel4";
             this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(1065, 633);
+            this.tabControlPanel4.Size = new System.Drawing.Size(1065, 558);
             this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
@@ -265,16 +541,16 @@
             // 
             this.tabControl3.BackColor = System.Drawing.Color.White;
             this.tabControl3.CanReorderTabs = true;
-            this.tabControl3.Controls.Add(this.tabControlPanel10);
             this.tabControl3.Controls.Add(this.tabControlPanel9);
+            this.tabControl3.Controls.Add(this.tabControlPanel10);
             this.tabControl3.Controls.Add(this.tabControlPanel11);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl3.ForeColor = System.Drawing.Color.Black;
             this.tabControl3.Location = new System.Drawing.Point(1, 1);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl3.SelectedTabIndex = 2;
-            this.tabControl3.Size = new System.Drawing.Size(1063, 631);
+            this.tabControl3.SelectedTabIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(1063, 556);
             this.tabControl3.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
             this.tabControl3.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
             this.tabControl3.TabIndex = 0;
@@ -296,7 +572,7 @@
             this.tabControlPanel10.Location = new System.Drawing.Point(0, 0);
             this.tabControlPanel10.Name = "tabControlPanel10";
             this.tabControlPanel10.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel10.Size = new System.Drawing.Size(1063, 604);
+            this.tabControlPanel10.Size = new System.Drawing.Size(1063, 529);
             this.tabControlPanel10.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel10.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel10.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
@@ -779,14 +1055,14 @@
             this.dgvActualizar.AllowUserToDeleteRows = false;
             this.dgvActualizar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvActualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActualizar.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActualizar.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvActualizar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvActualizar.Location = new System.Drawing.Point(671, 54);
             this.dgvActualizar.Name = "dgvActualizar";
@@ -1091,7 +1367,7 @@
             this.tabControlPanel9.Location = new System.Drawing.Point(0, 0);
             this.tabControlPanel9.Name = "tabControlPanel9";
             this.tabControlPanel9.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel9.Size = new System.Drawing.Size(1063, 604);
+            this.tabControlPanel9.Size = new System.Drawing.Size(1063, 529);
             this.tabControlPanel9.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel9.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel9.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
@@ -1663,7 +1939,7 @@
             this.tabControlPanel11.Location = new System.Drawing.Point(0, 0);
             this.tabControlPanel11.Name = "tabControlPanel11";
             this.tabControlPanel11.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel11.Size = new System.Drawing.Size(1063, 604);
+            this.tabControlPanel11.Size = new System.Drawing.Size(1063, 529);
             this.tabControlPanel11.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel11.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel11.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
@@ -1969,14 +2245,14 @@
             // 
             this.dgvDatosCP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatosCP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosCP.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosCP.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDatosCP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvDatosCP.Location = new System.Drawing.Point(4, 262);
             this.dgvDatosCP.Name = "dgvDatosCP";
@@ -2003,7 +2279,7 @@
             this.tabControlPanel2.Location = new System.Drawing.Point(0, 27);
             this.tabControlPanel2.Name = "tabControlPanel2";
             this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(1065, 633);
+            this.tabControlPanel2.Size = new System.Drawing.Size(1065, 558);
             this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
@@ -2026,7 +2302,7 @@
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 27);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1065, 633);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1065, 558);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
@@ -2042,146 +2318,6 @@
             this.tbIngresos.Name = "tbIngresos";
             this.tbIngresos.Text = "Ingresos";
             // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.tabControl4);
-            this.tabControlPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(1065, 633);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 3;
-            this.tabControlPanel3.TabItem = this.tbCuentas;
-            // 
-            // tbCuentas
-            // 
-            this.tbCuentas.AttachedControl = this.tabControlPanel3;
-            this.tbCuentas.Name = "tbCuentas";
-            this.tbCuentas.Text = "Cuentas";
-            // 
-            // tabControlPanel5
-            // 
-            this.tabControlPanel5.Controls.Add(this.tabControl2);
-            this.tabControlPanel5.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel5.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel5.Name = "tabControlPanel5";
-            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel5.Size = new System.Drawing.Size(1065, 633);
-            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel5.Style.GradientAngle = 90;
-            this.tabControlPanel5.TabIndex = 5;
-            this.tabControlPanel5.TabItem = this.tbConfiguracion;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.BackColor = System.Drawing.Color.White;
-            this.tabControl2.CanReorderTabs = true;
-            this.tabControl2.Controls.Add(this.tabControlPanel6);
-            this.tabControl2.Controls.Add(this.tabControlPanel7);
-            this.tabControl2.Controls.Add(this.tabControlPanel8);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.ForeColor = System.Drawing.Color.Black;
-            this.tabControl2.Location = new System.Drawing.Point(1, 1);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl2.SelectedTabIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1063, 631);
-            this.tabControl2.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
-            this.tabControl2.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
-            this.tabControl2.TabIndex = 0;
-            this.tabControl2.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
-            this.tabControl2.Tabs.Add(this.tabItem1);
-            this.tabControl2.Tabs.Add(this.tbSucursales);
-            this.tabControl2.Tabs.Add(this.tbEmpleados);
-            this.tabControl2.Text = "tabControl2";
-            // 
-            // tabControlPanel6
-            // 
-            this.tabControlPanel6.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tabControlPanel6.Name = "tabControlPanel6";
-            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(1063, 604);
-            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Top)));
-            this.tabControlPanel6.Style.GradientAngle = -90;
-            this.tabControlPanel6.TabIndex = 1;
-            this.tabControlPanel6.TabItem = this.tabItem1;
-            // 
-            // tabItem1
-            // 
-            this.tabItem1.AttachedControl = this.tabControlPanel6;
-            this.tabItem1.Name = "tabItem1";
-            this.tabItem1.Text = "Empresa";
-            // 
-            // tabControlPanel7
-            // 
-            this.tabControlPanel7.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tabControlPanel7.Name = "tabControlPanel7";
-            this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel7.Size = new System.Drawing.Size(1063, 604);
-            this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel7.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Top)));
-            this.tabControlPanel7.Style.GradientAngle = -90;
-            this.tabControlPanel7.TabIndex = 2;
-            this.tabControlPanel7.TabItem = this.tbSucursales;
-            // 
-            // tbSucursales
-            // 
-            this.tbSucursales.AttachedControl = this.tabControlPanel7;
-            this.tbSucursales.Name = "tbSucursales";
-            this.tbSucursales.Text = "Sucursales";
-            // 
-            // tabControlPanel8
-            // 
-            this.tabControlPanel8.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel8.Location = new System.Drawing.Point(0, 0);
-            this.tabControlPanel8.Name = "tabControlPanel8";
-            this.tabControlPanel8.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel8.Size = new System.Drawing.Size(1063, 604);
-            this.tabControlPanel8.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel8.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel8.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel8.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Top)));
-            this.tabControlPanel8.Style.GradientAngle = -90;
-            this.tabControlPanel8.TabIndex = 3;
-            this.tabControlPanel8.TabItem = this.tbEmpleados;
-            // 
-            // tbEmpleados
-            // 
-            this.tbEmpleados.AttachedControl = this.tabControlPanel8;
-            this.tbEmpleados.Name = "tbEmpleados";
-            this.tbEmpleados.Text = "Empleados";
-            // 
-            // tbConfiguracion
-            // 
-            this.tbConfiguracion.AttachedControl = this.tabControlPanel5;
-            this.tbConfiguracion.Name = "tbConfiguracion";
-            this.tbConfiguracion.Text = "Configuracion";
-            // 
             // lblNombreEmpleado
             // 
             this.lblNombreEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -2195,7 +2331,7 @@
             this.lblNombreEmpleado.Margin = new System.Windows.Forms.Padding(0);
             this.lblNombreEmpleado.Name = "lblNombreEmpleado";
             this.lblNombreEmpleado.Size = new System.Drawing.Size(532, 23);
-            this.lblNombreEmpleado.TabIndex = 3;
+            this.lblNombreEmpleado.TabIndex = 4;
             this.lblNombreEmpleado.Text = "Empleado";
             // 
             // lblNombreEmpresa
@@ -2211,23 +2347,29 @@
             this.lblNombreEmpresa.Margin = new System.Windows.Forms.Padding(0);
             this.lblNombreEmpresa.Name = "lblNombreEmpresa";
             this.lblNombreEmpresa.Size = new System.Drawing.Size(533, 23);
-            this.lblNombreEmpresa.TabIndex = 4;
+            this.lblNombreEmpresa.TabIndex = 5;
             this.lblNombreEmpresa.Text = "Empresa";
             this.lblNombreEmpresa.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // layoutGroup1
             // 
-            this.layoutGroup1.Height = 10;
+            this.layoutGroup1.Height = 20;
             this.layoutGroup1.HeightType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            this.layoutGroup1.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
+            this.pbalesan});
             this.layoutGroup1.MinSize = new System.Drawing.Size(120, 32);
             this.layoutGroup1.Name = "layoutGroup1";
+            background3.Colors = new System.Drawing.Color[] {
+        System.Drawing.Color.Navy,
+        System.Drawing.Color.Empty};
+            this.layoutGroup1.Style.Background = background3;
             this.layoutGroup1.TextPosition = DevComponents.DotNetBar.Layout.eLayoutPosition.Top;
             this.layoutGroup1.Width = 100;
             this.layoutGroup1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutGroup2
             // 
-            this.layoutGroup2.Height = 90;
+            this.layoutGroup2.Height = 80;
             this.layoutGroup2.HeightType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             this.layoutGroup2.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
             this.layoutControlItem3});
@@ -2265,136 +2407,43 @@
             this.layoutControlItem2.Width = 50;
             this.layoutControlItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
-            // tabControl4
-            // 
-            this.tabControl4.BackColor = System.Drawing.Color.White;
-            this.tabControl4.CanReorderTabs = true;
-            this.tabControl4.Controls.Add(this.tabControlPanel12);
-            this.tabControl4.Controls.Add(this.tabControlPanel13);
-            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl4.ForeColor = System.Drawing.Color.Black;
-            this.tabControl4.Location = new System.Drawing.Point(1, 1);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl4.SelectedTabIndex = 2;
-            this.tabControl4.Size = new System.Drawing.Size(1063, 631);
-            this.tabControl4.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
-            this.tabControl4.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
-            this.tabControl4.TabIndex = 1;
-            this.tabControl4.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
-            this.tabControl4.Tabs.Add(this.tabItem3);
-            this.tabControl4.Tabs.Add(this.tabItem4);
-            this.tabControl4.Text = "Estados";
-            // 
-            // tabControlPanel12
-            // 
-            this.tabControlPanel12.Controls.Add(this.groupPanel17);
-            this.tabControlPanel12.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel12.Location = new System.Drawing.Point(0, 0);
-            this.tabControlPanel12.Name = "tabControlPanel12";
-            this.tabControlPanel12.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel12.Size = new System.Drawing.Size(1063, 604);
-            this.tabControlPanel12.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel12.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel12.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel12.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Top)));
-            this.tabControlPanel12.Style.GradientAngle = -90;
-            this.tabControlPanel12.TabIndex = 1;
-            this.tabControlPanel12.TabItem = this.tabItem3;
-            // 
-            // groupPanel17
-            // 
-            this.groupPanel17.BackColor = System.Drawing.Color.White;
-            this.groupPanel17.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel17.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel17.Controls.Add(this.dataGridViewX1);
-            this.groupPanel17.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel17.Location = new System.Drawing.Point(6, 4);
-            this.groupPanel17.Name = "groupPanel17";
-            this.groupPanel17.Size = new System.Drawing.Size(1051, 596);
-            // 
-            // 
-            // 
-            this.groupPanel17.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel17.Style.BackColorGradientAngle = 90;
-            this.groupPanel17.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel17.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel17.Style.BorderBottomWidth = 1;
-            this.groupPanel17.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel17.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel17.Style.BorderLeftWidth = 1;
-            this.groupPanel17.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel17.Style.BorderRightWidth = 1;
-            this.groupPanel17.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel17.Style.BorderTopWidth = 1;
-            this.groupPanel17.Style.CornerDiameter = 4;
-            this.groupPanel17.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel17.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel17.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel17.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupPanel17.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupPanel17.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel17.TabIndex = 3;
-            this.groupPanel17.Text = "Informacion";
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabControlPanel12;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "Estados";
-            // 
-            // tabControlPanel13
-            // 
-            this.tabControlPanel13.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel13.Location = new System.Drawing.Point(0, 0);
-            this.tabControlPanel13.Name = "tabControlPanel13";
-            this.tabControlPanel13.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel13.Size = new System.Drawing.Size(1063, 604);
-            this.tabControlPanel13.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel13.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel13.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tabControlPanel13.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Top)));
-            this.tabControlPanel13.Style.GradientAngle = -90;
-            this.tabControlPanel13.TabIndex = 2;
-            this.tabControlPanel13.TabItem = this.tabItem4;
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel13;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "Crear Cuenta";
-            // 
             // tabItem5
             // 
             this.tabItem5.Name = "tabItem5";
             this.tabItem5.Text = "Consulta";
             // 
-            // dataGridViewX1
+            // pictureBox1
             // 
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(152, 173);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(703, 308);
-            this.dataGridViewX1.TabIndex = 0;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(313, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbalesan
+            // 
+            this.pbalesan.Control = this.pictureBox1;
+            this.pbalesan.Height = 100;
+            this.pbalesan.HeightType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            this.pbalesan.MinSize = new System.Drawing.Size(64, 18);
+            this.pbalesan.Name = "pbalesan";
+            this.pbalesan.Width = 30;
+            this.pbalesan.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // btnCuentasEstadosActualizar
+            // 
+            this.btnCuentasEstadosActualizar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCuentasEstadosActualizar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCuentasEstadosActualizar.Location = new System.Drawing.Point(786, 439);
+            this.btnCuentasEstadosActualizar.Name = "btnCuentasEstadosActualizar";
+            this.btnCuentasEstadosActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnCuentasEstadosActualizar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCuentasEstadosActualizar.TabIndex = 1;
+            this.btnCuentasEstadosActualizar.Text = "Actualizar";
+            this.btnCuentasEstadosActualizar.Click += new System.EventHandler(this.btnCuentasEstadosActualizar_Click);
             // 
             // MenuPrincipal
             // 
@@ -2403,6 +2452,7 @@
             this.ClientSize = new System.Drawing.Size(1081, 783);
             this.Controls.Add(this.layoutControl1);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
@@ -2410,6 +2460,15 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabControlPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl4)).EndInit();
+            this.tabControl4.ResumeLayout(false);
+            this.tabControlPanel12.ResumeLayout(false);
+            this.groupPanel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasEstados)).EndInit();
+            this.tabControlPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
+            this.tabControl2.ResumeLayout(false);
             this.tabControlPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl3)).EndInit();
             this.tabControl3.ResumeLayout(false);
@@ -2439,15 +2498,7 @@
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosCP)).EndInit();
-            this.tabControlPanel3.ResumeLayout(false);
-            this.tabControlPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
-            this.tabControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl4)).EndInit();
-            this.tabControl4.ResumeLayout(false);
-            this.tabControlPanel12.ResumeLayout(false);
-            this.groupPanel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2579,7 +2630,10 @@
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel13;
         private DevComponents.DotNetBar.TabItem tabItem4;
         private DevComponents.DotNetBar.TabItem tabItem5;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgvCuentasEstados;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevComponents.DotNetBar.Layout.LayoutControlItem pbalesan;
+        private DevComponents.DotNetBar.ButtonX btnCuentasEstadosActualizar;
 
     }
 }

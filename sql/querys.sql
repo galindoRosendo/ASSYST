@@ -46,7 +46,7 @@ CALL `alesandb`.`SP_CrearClienteProvedor`('PROVEDOR', 'ASDFGHJKLOIU', 'ANARTEC C
 
 CALL `alesandb`.`SP_CrearCuenta`('QWERTYUIOPAS');
 
-CALL `alesandb`.`SP_Transaccion`('QWERTYUIOPAS', 'Folio1', 1, 1, null, 400.00, 'ABONO');
+CALL `alesandb`.`SP_Transaccion`('SDRAFZCSG', 'Folio7', 1, 1, null, 600.00, 'ABONO');
 CALL `alesandb`.`SP_Transaccion`('POIUYTREWEQ', 'Folio5', 1, 1, null, 200.00, 'CARGO');
 
 CALL `alesandb`.`SP_ActualizarClienteProvedor`('CLIENTE', 'QWERTYUIOPAS', 'QUINTANILLA INC.','PERU', '2020', '8677845129', 'CLIENTE1@HOTMAIL.COM', 'HILARIO', 'QUINTANILLA', 'CHAPA', 1, 'A');
