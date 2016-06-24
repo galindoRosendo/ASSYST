@@ -126,7 +126,8 @@ idBanco int,
 monto double,
 estadoTransaccion varchar(1),
 tipoTransaccion varchar(5),
-foreign key(RFC) references cuentas(RFC) on update cascade
+foreign key(RFC) references cuentas(RFC) on update cascade,
+foreign key(idEmpleado) references empleados(idEmpleado) on update cascade
 );
 
 #Metodos de pago autorizados

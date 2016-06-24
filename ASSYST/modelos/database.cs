@@ -536,6 +536,99 @@ namespace ASSYST.modelos
 
             return dt; 
         }
+
+        public DataTable listaClientes() 
+        {
+            DataTable dt = new DataTable("Clientes");
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                cmd = new MySqlCommand("SELECT * FROM alesandb.clientes;", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                conn.Open();
+                cmd.Prepare();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+            }
+            catch (MySqlException MSQLEx)
+            {
+
+                log = MSQLEx.Message;
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+
+
+            return dt; 
+        }
+
+        public DataTable listaProvedores()
+        {
+            DataTable dt = new DataTable("Provedores");
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                cmd = new MySqlCommand("SELECT * FROM alesandb.provedores;", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                conn.Open();
+                cmd.Prepare();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+            }
+            catch (MySqlException MSQLEx)
+            {
+
+                log = MSQLEx.Message;
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+
+
+            return dt; 
+        }
+
+        public DataTable insertarTransaccion(Transaccion transaccionActual)
+        {
+
+            DataTable dt = new DataTable("Transaccion");
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                cmd = new MySqlCommand("CALL alesandb.SP_Transaccion(@RFC,@folioF, @idEmpleado, @metodoPago, @nombreMetodoBanco, @monto, @tipoTransaccion);", conn);
+                cmd.Parameters.AddWithValue("@RFC", transaccionActual.RFC);
+                cmd.Parameters.AddWithValue("@folioF", transaccionActual.RFC);
+                cmd.Parameters.AddWithValue("@idEmpleado", transaccionActual.RFC);
+                cmd.Parameters.AddWithValue("@metodoPago", transaccionActual.RFC);
+                cmd.Parameters.AddWithValue("@nombreMetodoBanco", transaccionActual.RFC);
+                cmd.Parameters.AddWithValue("@monto", transaccionActual.RFC);
+                cmd.Parameters.AddWithValue("@tipoTransaccion", transaccionActual.RFC);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                conn.Open();
+                cmd.Prepare();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+            }
+            catch (MySqlException MSQLEx)
+            {
+
+                log = MSQLEx.Message;
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+
+
+            return dt; 
+        }
+
         #endregion
 
     }

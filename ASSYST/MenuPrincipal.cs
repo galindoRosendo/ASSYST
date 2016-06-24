@@ -12,10 +12,14 @@ namespace ASSYST
 {
     public partial class MenuPrincipal : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region Variables
         Empleado empleadoActual;
         Empresa empresaActual;
-        DataTable cuentas;
+        DataTable cuentas, clientes, provedores;
         database datos;
+        string tipo = "";
+        #endregion
+
         public MenuPrincipal(Empleado empleado, Empresa empresa)
         {
             InitializeComponent();
@@ -29,7 +33,14 @@ namespace ASSYST
             lblNombreEmpleado.Text = empleadoActual.NombreCompleto;
             lblNombreEmpresa.Text = empresaActual.NombreEmpresa;
             cuentas = datos.listaCuentas();
+            clientes = datos.listaClientes();
+            provedores = datos.listaProvedores();
             dgvCuentasEstados.DataSource = cuentas;
+            dgvIngresosAbonosClientes.DataSource = clientes;
+            dgvIngresosCargosClientes.DataSource = clientes;
+            dgvEgresosAbonosProvedores.DataSource = provedores;
+            dgvEgresosCargosProvedores.DataSource = provedores;
+
         }
 
         private void btnDatosCPAceptar_Click(object sender, EventArgs e)
@@ -137,11 +148,6 @@ namespace ASSYST
             }
 
         }
-
-
-        #region variablesActualizarCliente
-        string tipo = "";
-        #endregion
 
         private void btnDatosCPActBuscar_Click(object sender, EventArgs e)
         {

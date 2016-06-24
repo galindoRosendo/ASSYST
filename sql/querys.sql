@@ -11,6 +11,7 @@ SELECT * FROM alesandb.empleados;
 SELECT * FROM alesandb.clientes;
 DESCRIBE alesandb.clientes;
 SELECT * FROM alesandb.provedores;
+
 SELECT * FROM alesandb.transacciones;
 SELECT * FROM alesandb.cuentas;
 
@@ -46,8 +47,10 @@ CALL `alesandb`.`SP_CrearClienteProvedor`('PROVEDOR', 'ASDFGHJKLOIU', 'ANARTEC C
 
 CALL `alesandb`.`SP_CrearCuenta`('QWERTYUIOPAS');
 
-CALL `alesandb`.`SP_Transaccion`('SDRAFZCSG', 'Folio7', 1, 1, null, 600.00, 'ABONO');
-CALL `alesandb`.`SP_Transaccion`('POIUYTREWEQ', 'Folio5', 1, 1, null, 200.00, 'CARGO');
+CALL `alesandb`.`SP_Transaccion`('SDRAFZCSG', 'Folio7', 1, 1, null, 800.00, 'ABONO');
+CALL `alesandb`.`SP_Transaccion`('SDRAFZCSG', 'Folio5', 3, 1, null, 600.00, 'CARGO');
+#CALL `alesandb`.`SP_Transaccion`(<{in SPRFC varchar(15)}>, <{IN SPFolio varchar(30)}>, <{in SPidEmpleado int}>, <{IN SPMetodoPago int}>, <{in SPidBanco int}>, <{IN SPMonto double}>, <{IN SPtipoTrans varchar(5)}>);
+
 
 CALL `alesandb`.`SP_ActualizarClienteProvedor`('CLIENTE', 'QWERTYUIOPAS', 'QUINTANILLA INC.','PERU', '2020', '8677845129', 'CLIENTE1@HOTMAIL.COM', 'HILARIO', 'QUINTANILLA', 'CHAPA', 1, 'A');
 
