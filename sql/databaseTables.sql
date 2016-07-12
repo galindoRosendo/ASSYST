@@ -1,4 +1,5 @@
 #Creacion de la base de datos 
+DROP DATABASE IF EXISTS alesandb;
 CREATE DATABASE alesandb;
 
 #Uso de la base de datos alesandb
