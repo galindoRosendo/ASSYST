@@ -39,16 +39,16 @@ INSERT INTO `alesandb`.`empresa` (`idempresa`, `nombre`, `rfc`, `telefono`, `cal
 INSERT INTO `alesandb`.`sucursales` (`idsucursal`, `calle`, `numExt`, `telefono`, `estado`, `idempresa`, `idCiudad`) VALUES ('1', 'Maclovio Herrera', '2015', '8674578124', 'A', '1', '1');
 
 #Store Procedures de la base de datos
-CALL `alesandb`.`SP_CrearUsuario`('Alejandro', 'Sanchez', 'Martinez', 'alejandro@alesan.mx', 'alesan', 'Sistemas',1);
+CALL `alesandb`.`SP_CrearUsuario`('Rosendo', 'Galindo', 'Lopez', 'rosendo@alesan.mx', 'alesan', 'Sistemas',1);
 
 CALL `alesandb`.`SP_LogInUsuario`('rosendo@alesan.mx', 'ALESAN');
 
 CALL `alesandb`.`SP_CrearClienteProvedor`('PROVEDOR', 'ASDFGHJKLOIU', 'ANARTEC CO.', 'ALDAMA', '2020','8677845129', 'PROVEDOR1@GMAIL.COM','ALEJANDRO', 'RAMIREZ', 'ELIZONDO', 1);
 
-CALL `alesandb`.`SP_CrearCuenta`('QWERTYUIOPAS');
+CALL `alesandb`.`SP_CrearCuenta`('QWERTYUII');
 
-CALL `alesandb`.`SP_Transaccion`('SDRAFZCSG', 'Folio7', 1, 1, null, 800.00, 'ABONO');
-CALL `alesandb`.`SP_Transaccion`('SDRAFZCSG', 'Folio5', 3, 1, null, 600.00, 'CARGO');
+CALL `alesandb`.`SP_Transaccion`('ASDFGHJKLOIU', 'Folio7', 1, 1, null, 400.00, 'ABONO');
+CALL `alesandb`.`SP_Transaccion`('QWERTYUII', 'Folio5', 2, 1, null, 500.00, 'CARGO');
 #CALL `alesandb`.`SP_Transaccion`(<{in SPRFC varchar(15)}>, <{IN SPFolio varchar(30)}>, <{in SPidEmpleado int}>, <{IN SPMetodoPago int}>, <{in SPidBanco int}>, <{IN SPMonto double}>, <{IN SPtipoTrans varchar(5)}>);
 
 
