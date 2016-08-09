@@ -4,7 +4,7 @@ SELECT
     D001FECARR AS'FECHA', 
     F001TIPCAM AS 'TIPO DE CAMBIO', 
     #pedimentos, contribuciones
-    'IVA', 
+    F001TOTFAC AS'IVA', 
     C001CVEDOC AS 'CLAVE',
     F001FLETES AS 'FLETES',
 	F001VALSEG AS 'SEGUROS',
@@ -12,24 +12,24 @@ SELECT
     F001OTRINC AS 'OTROS', 
     F001TASDT1 AS 'DTA',
     #datos generales y partida
-    #partidas
-    'VALOR COMERCIAL', 
+    #partidas AT016
+    N016VALCOM AS 'VALOR COMERCIAL', 
     N001VALADU AS'VALOR ADUANA',
-    #Identificadores Si/No
-    'CONSOLIDADO',
+    #Identificadores Si/No AT041
+    L041BANCF AS 'CONSOLIDADO',
 	F001TASPRE AS 'PREVALIDACION', 
     F001TOTFAC AS 'FACTURA', 
     #factura
-    'FECHA FACTURA', 
+    D005FECFAC AS'FECHA FACTURA', 
     F001FACMEX AS 'FACTOR MONEDA',
     #Observaciones a nivel partida
     'NUM_PART',
     #Materia Prima
     'TIPO BIEN', 
-    #Fraccion Fracciones Partidas
-    'FRACCION IMPORTACION',
-    #descripcion de mercancia
-	'DES_MERC',
+    #Fraccion Fracciones Partidas AT016
+    C016FRAC AS 'FRACCION IMPORTACION',
+    #descripcion de mercancia AT016
+	C016DESMER AS 'DES_MERC',
     #partidas
     'TASA',
     #partidas
@@ -37,15 +37,15 @@ SELECT
     #partidas cantidad comercial
     'UNIDAD',
     #partidas despues de descripcion
-    'PRECIO',
+    F016PREUNI AS 'PRECIO',
     #cantidad comercial
-    'CANTIDAD', 
+     'CANTIDAD', 
     C001ORIGEN AS'ORIGEN',
     #facturas importacion es vendedor / [siempre] exportacion es comprador
     'VENDEDOR', 
     C001CONFOR AS'FORMA DE PAGO', 
-    #facturas
-    'INCOTERM', 
+    #facturas AT604
+    C604CVEINC AS'INCOTERM', 
     F001TASREU AS'PAGA IMPUESTOS PARA TLCAN',
 	#trato preferencial TLC
     'PAGA IMPUESTOS PARA TLCUEM',
