@@ -71,6 +71,7 @@ foreign key (idsucursal) references sucursales(idsucursal)on update cascade on d
 );
 
 #Tabla con los clientes de la empresa
+#crear rfc y id como llave primaria en clientes y proveedores 
 CREATE TABLE clientes(
 rfc varchar(15),
 nombre varchar(50),
