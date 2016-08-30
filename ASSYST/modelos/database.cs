@@ -18,7 +18,7 @@ namespace ASSYST.modelos
 
         #region Variables
         private string log = "";
-        static string conString = "server=192.168.1.75;uid=administrador;pwd=ALESAN2016sys;database=alesandb;";
+        static string conString = "server=localhost;uid=administrador;pwd=ALESAN2016sys;database=alesandb;";
         MySqlConnection conn;
         
         #endregion
