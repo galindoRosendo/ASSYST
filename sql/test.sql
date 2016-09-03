@@ -1,9 +1,12 @@
 SELECT 
     *
+
 FROM
     transacciones T 
-    JOIN empleados E on (E.idEmpleado=T.idempleado);
     
+JOIN empleados E on (E.idEmpleado=T.idempleado);
+    
+
 
 SELECT cl.nombre,cl.RFC,cl.estadoCliente,c.saldo,c.ultimoPago,c.fechaCreacion #cl.nombre,C.RFC
 FROM cuentas c
