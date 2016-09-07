@@ -15,7 +15,7 @@ namespace ASSYST
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new reportM3());
+            Application.Run(new login());
         }
     }
 }

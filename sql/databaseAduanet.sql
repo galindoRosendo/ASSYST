@@ -60,13 +60,16 @@ SELECT
     #contraprestacion
     'CNT',
     #peso por parte
-    'PESO NETO', 
+    'PESO NETO',
     #peso total
     F001PESO AS 'PESO BRUTO' 
 FROM 
 	at001 AS pedGeneral INNER JOIN
+    at005 AS factura ON (pedGeneral.C001NUMPED = factura.C005NUMPED) INNER JOIN
 	at016 AS fracciones ON (pedGeneral.C001NUMPED = fracciones.C016NUMPED) INNER JOIN
-    at041 AS consolidado ON (pedGeneral.C001NUMPED = consolidado.C041NUMPED)
+    at019 AS partida ON (pedGeneral.C001NUMPED = partida.C019NUMPED) INNER JOIN
+    at041 AS consolidado ON (pedGeneral.C001NUMPED = consolidado.C041NUMPED) INNER JOIN
+    at604 AS datosCabecera ON (pedGeneral.C001NUMPED = datosCabecera.C604NUMPED) 
     
 # AT016 AT604 AT041
 WHERE 

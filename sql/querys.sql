@@ -24,7 +24,7 @@ CALL `alesandb`.`SP_CrearClienteProvedor`('CLIENTE', 'MNBVCXZ', 'ANARTEC CO.', '
 
 CALL `alesandb`.`SP_CrearCuenta`('MNBVCXZ');
 
-CALL `alesandb`.`SP_Transaccion`('MNBVCXZ', 'Folio7', 1, 1, null, 800.00, 'CARGO');
+CALL `alesandb`.`SP_Transaccion`('MNBVCXZ', 'Folio13', 1, 1, null, 1100.00, 'Abono');
 CALL `alesandb`.`SP_Transaccion`('QWERTYUII', 'Folio5', 2, 1, null, 500.00, 'CARGO');
 #CALL `alesandb`.`SP_Transaccion`(<{in SPRFC varchar(15)}>, <{IN SPFolio varchar(30)}>, <{in SPidEmpleado int}>, <{IN SPMetodoPago int}>, <{in SPidBanco int}>, <{IN SPMonto double}>, <{IN SPtipoTrans varchar(5)}>);
 
